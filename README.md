@@ -4,7 +4,7 @@ A Node.js Express web application deployed to Microsoft Azure App Service as par
 
 ## Live URL
 
-🔗 **[https://YOUR-APP-NAME.azurewebsites.net](https://YOUR-APP-NAME.azurewebsites.net)**
+🔗 **[olamc-agg8fjdffgbbendg.westeurope-01.azurewebsites.net](olamc-agg8fjdffgbbendg.westeurope-01.azurewebsites.net)**
 
 > Replace the URL above with your actual Azure App Service URL after deployment.
 
