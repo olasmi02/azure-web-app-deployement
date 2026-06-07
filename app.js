@@ -19,6 +19,11 @@ app.get("/health", (req, res) => {
   res.json({ status: "ok", environment: APP_ENV });
 });
 
+// Custom 404 Error Handler
+app.use((req, res, next) => {
+  res.status(404).render("404", { appName: APP_NAME, env: APP_ENV, path: req.path });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

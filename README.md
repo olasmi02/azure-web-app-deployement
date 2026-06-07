@@ -16,8 +16,9 @@ azure-node-app/
 ├── public/                  # Static assets (stylesheets, client-side JS)
 │   └── style.css            # Custom layout styles
 ├── views/
-│   └── index.ejs            # EJS template for rendering environment variables
-├── app.js                   # Express application entry point & health check
+│   ├── index.ejs            # EJS template for rendering environment variables
+│   └── 404.ejs              # Custom 404 error page template
+├── app.js                   # Express application entry point, health check & 404 handler
 ├── package.json             # App manifest, start scripts, engine config
 ├── summary.txt              # Executive deployment overview
 └── README.md                # Comprehensive deployment documentation
@@ -143,6 +144,14 @@ graph TD
 ### 3. When to Scale
 - **Scale Out (Horizontal):** When the application experiences heavy concurrent traffic and the CPU/Memory utilization of the single instance exceeds 70% or average latency spikes.
 - **Scale Up (Vertical):** When the app runs out of memory (B1 provides 1.75 GB RAM) causing Out of Memory (OOM) crashes, or if features like staging slots, custom VNets, or backups are required.
+
+### 4. Demonstrating Scale-Out (Optional)
+If your Azure budget or subscription credits permit, you can manually scale out your App Service Plan to multiple instances to demonstrate horizontal scaling:
+1. In the Azure Portal, navigate to your **App Service Plan** resource.
+2. Select the **Scale out (App Service plan)** blade under the **Settings** menu.
+3. Select the **Manual scale** option and increase the **Instance count** from `1` to `2` or `3`.
+4. Click **Save** at the top.
+5. Capture a screenshot of the configured blade and save it in the repository as `screenshots/scale_out.png`. This provides visual evidence of active multi-instance load distribution.
 
 ---
 

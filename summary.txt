@@ -27,6 +27,10 @@ Azure automatically detects the "start" script in package.json and executes it:
   "scripts": { "start": "node app.js" }
 No custom startup command is needed.
 
+Custom 404 Error Page
+---------------------
+Express middleware is registered at the end of the routing chain to intercept non-existent routes, return an HTTP 404 status code, and render a premium-designed, responsive 404.ejs template indicating the path that could not be resolved.
+
 Environment Variables Configured
 ---------------------------------
 - APP_ENV = production
